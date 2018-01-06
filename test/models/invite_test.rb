@@ -8,12 +8,12 @@ class InviteTest < ActiveSupport::TestCase
 
   test 'invalid without code' do
     invite = build(:invite, code: '')
-    assert !invite.valid?
+    assert_not invite.valid?
   end
 
   test 'invalid if not unique' do
     invite1 = create(:invite, code: 'sheep')
     invite2 = build(:invite, code: 'sheep')
-    assert !invite2.valid?
+    assert_not invite2.valid?
   end
 end
