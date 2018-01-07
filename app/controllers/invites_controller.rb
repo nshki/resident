@@ -7,10 +7,11 @@ class InvitesController < ApplicationController
   end
 
   def create_account
-    user = User.new(user_params)
-    invite = Invite.find_by(code: user.code)
+    invite = Invite.find_by(code: params[:user][:code])
+    community = Community.find_by(name: ENV.fetch('DEFAULT_COMMUNITY'))
+    user = User.new(user_params.merge(community: community))
 
-    if invite.present? && user.save
+    if invite.present? && community.present? && user.save
       invite.destroy
       redirect_to root_path, flash: {
         success: 'Account created! Welcome to Resident.'
