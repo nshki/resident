@@ -19,8 +19,10 @@
           </div>
           <div>
             <% if signed_in? %>
-              <%= image_tag current_user.gravatar_url, class: 'navbar__avatar' %>
-              <%= link_to 'Sign out', sign_out_path, class: 'navbar__action', method: :delete %>
+              <%= link_to sign_out_path, class: 'navbar__action', method: :delete do %>
+                <%= image_tag current_user.gravatar_url, class: 'navbar__avatar' %>
+                Sign out
+              <% end %>
             <% end %>
           </div>
         </div>
