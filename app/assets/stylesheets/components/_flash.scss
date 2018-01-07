@@ -1,0 +1,49 @@
+@keyframes fade-in-out {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 10px, 0);
+  }
+
+  20%,
+  80% {
+    opacity: 1;
+    transform: none;
+  }
+  
+  100% {
+    opacity: 0;
+    transform: translate3d(0, 10px, 0);
+  }
+}
+
+.flash {
+  max-width: 300px;
+  width: 100%;
+  position: fixed;
+  right: 1.125rem;
+  bottom: 1rem;
+  opacity: 0;
+  transform: translate3d(0, 10px, 0);
+  animation: fade-in-out 7s ease-in-out;
+  animation-delay: 0.5s;
+  pointer-events: none;
+
+  p {
+    font-size: 1rem;
+    color: #fff;
+    padding: 1rem;
+    border-radius: 10px;
+  }
+}
+
+.flash-success {
+  background-color: color(watermelon);
+}
+
+.flash-notice {
+  background-color: rgba(#000, 0.8);
+}
+
+.flash-alert {
+  background-color: color(raspberry);
+}

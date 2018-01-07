@@ -12,9 +12,11 @@ class InvitesController < ApplicationController
 
     if invite.present? && user.save
       invite.destroy
-      redirect_to root_path, success: 'Account created! Welcome to Resident.'
+      redirect_to root_path, flash: {
+        success: 'Account created! Welcome to Resident.'
+      }
     else
-      redirect_to root_path, error: 'There was a problem.'
+      redirect_to root_path, alert: 'There was a problem.'
     end
   end
 

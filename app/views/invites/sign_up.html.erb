@@ -1,12 +1,21 @@
-<%= form_for(@user, url: create_account_path) do |f| %>
-  <%= f.hidden_field :code, value: @code %>
-  <div>
-    <%= f.label :email %>
-    <%= f.email_field :email, required: true %>
-  </div>
-  <div>
-    <%= f.label :password %>
-    <%= f.password_field :password, required: true %>
-  </div>  
-  <%= f.submit 'Create Account' %>
-<% end %>
+<div id="clearance">
+  <h2>Join Resident!</h2>
+
+  <%= form_for(@user, url: create_account_path) do |f| %>
+    <%= f.hidden_field :code, value: @code %>
+    
+    <div class="email-field">
+      <%= f.label :email %>
+      <%= f.email_field :email, required: true %>
+    </div>
+
+    <div class="password-field">
+      <%= f.label :password %>
+      <%= f.password_field :password, required: true %>
+    </div>
+
+    <div class="submit-field">
+      <%= f.submit 'Create Account' %>
+    </div>
+  <% end %>
+</div>
