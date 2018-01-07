@@ -21,6 +21,7 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'dotenv-rails'
   gem 'factory_bot_rails', '~> 4.0'
+  gem 'poltergeist'
 end
 
 group :development do

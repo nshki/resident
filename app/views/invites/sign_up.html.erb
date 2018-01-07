@@ -1,0 +1,12 @@
+<%= form_for(@user, url: create_account_path) do |f| %>
+  <%= f.hidden_field :code, value: @code %>
+  <div>
+    <%= f.label :email %>
+    <%= f.email_field :email, required: true %>
+  </div>
+  <div>
+    <%= f.label :password %>
+    <%= f.password_field :password, required: true %>
+  </div>  
+  <%= f.submit 'Create Account' %>
+<% end %>
