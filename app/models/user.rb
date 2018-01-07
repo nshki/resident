@@ -1,6 +1,8 @@
 class User < ApplicationRecord
   include Clearance::User
 
+  has_many :issues, dependent: :destroy
+  has_many :favorites, dependent: :destroy
   belongs_to :community
 
   validates :code, presence: true
