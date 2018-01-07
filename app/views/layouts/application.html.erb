@@ -11,6 +11,21 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body class="bg-hill">
+    <nav class="navbar">
+      <div class="wrapper">
+        <div class="navbar__flex">
+          <div>
+            <h1 class="navbar__logo"><%= link_to 'Resident', root_path %></h1>
+          </div>
+          <div>
+            <% if signed_in? %>
+              <%= link_to 'Sign out', sign_out_path, class: 'navbar__action', method: :delete %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </nav>
+
     <%= yield %>
 
     <% if flash.any? %>
