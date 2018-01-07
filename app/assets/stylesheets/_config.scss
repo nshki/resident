@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700');
+
+
+// Allow for using colors by calling `color(color-name)`.
+//------------------------------------------------------------------------------
+
+$colors: (
+  light-grey: #f5f5f5,
+  raspberry: #eb5757,
+);
+
+@function color($key) {
+  @if map-has-key($colors, $key) {
+    @return map-get($colors, $key);
+  }
+  @warn "Unknown `#{$key}` in $colors.";
+  @return null;
+}
+
+
+// Baseline styles.
+//------------------------------------------------------------------------------
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: color(light-grey);
+  font-family: Roboto, sans-serif;
+  line-height: 1.4;
+  margin: 0;
+}
+
+button {
+  border: none;
+  outline: none;
+}
+
+input {
+  font-family: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.125;
+}
+
+h1 {
+  font-size: 3rem;
+  margin: 1rem 0;
+}
+
+p {
+  font-size: 1.125rem;
+}

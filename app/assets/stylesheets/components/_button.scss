@@ -1,0 +1,19 @@
+.button {
+  background-color: color(raspberry);
+  text-decoration: none;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.125rem;
+  color: #fff;
+  min-width: 177px;
+  display: inline-block;
+  padding: 1.25rem 1.75rem;
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background-color: darken(color(raspberry), 5%);
+    transform: translate3d(0, -3px, 0);
+    box-shadow: 0 3px 15px rgba(#000, 0.3);
+  }
+}
