@@ -1,0 +1,42 @@
+.card {
+  background-color: #fff;
+  text-decoration: none;
+  color: #000;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 225px;
+  padding: 2.2rem;
+  border-radius: 10px;
+  box-shadow: 0 3px 15px rgba(#000, 0.15);
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    color: #000;
+    box-shadow: 0 3px 15px rgba(#000, 0.4);
+    transform: translate3d(0, -3px, 0);
+  }
+
+  &.-w-half {
+    @media (min-width: 700px) {
+      width: 48%;
+    }
+  }
+}
+
+.card__author {
+  font-size: 0.875rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.card__avatar {
+  width: 46px;
+  height: 46px;
+  display: block;
+  margin-right: 0.6rem;
+  border-radius: 999px;
+}

@@ -47,6 +47,10 @@ h2 {
   font-size: 2rem;
 }
 
+h3 {
+  font-size: 1.5rem;
+}
+
 p {
   font-size: 1.125rem;
 }
@@ -74,7 +78,8 @@ label {
   margin-bottom: 0.5rem;
 }
 
-input {
+input,
+textarea {
   background-color: #fff;
   font-family: inherit;
   font-weight: bold;
@@ -89,5 +94,14 @@ input {
   &:focus {
     outline: none;
     box-shadow: 0 3px 15px rgba(#000, 0.3);
+  }
+}
+
+textarea {
+  min-width: 100%;
+  min-height: 250px;
+
+  @media (min-width: 550px) {
+    min-width: 500px;
   }
 }

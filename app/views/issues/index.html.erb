@@ -1,0 +1,30 @@
+<div class="wrapper">
+  <div class="flex spacing-v-2">
+    <h2 class="spacing-r-1"><%= current_user.community.name %></h2>
+    <%= link_to 'New Issue', new_issue_path, class: 'button' %>
+  </div>
+
+  <div class="flex -align-start spacing-v-2">
+    <% if @issues.any? %>
+      <% @issues.each do |issue| %>
+        <%= link_to issue_path(issue), class: 'card -w-half spacing-b-2' do %>
+          <h3 class="spacing-t-0"><%= issue.title %></h3>
+          <div class="flex spacing-t-1">
+            <div class="card__author">
+              <%= image_tag issue.user.gravatar_url, class: 'card__avatar' %>
+              <div>
+                <strong><%= issue.user.email %></strong><br />
+                Posted <%= issue.created_at %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    <% else %>
+      <p>
+        No issues in your community! You all are perfect humans. 10/10 would
+        continue to live here.
+      </p>
+    <% end %>
+  </div>
+</div>

@@ -5,5 +5,6 @@ FactoryBot.define do
     email 'chuck@testa.com'
     password 'Alskdjfhg1!'
     code 'invitecode'
+    community
   end
 end
