@@ -44,11 +44,14 @@
 
     <div class="flex-remainder spacing-1">
       <div class="spacing-b-1">
-        <button class="button -positive">Me Too!</button>
+        <button class="button -full-width -positive">Me Too!</button>
       </div>
-      <% 9.times do %>
-        <div class="author -inline">
+      <% 4.times do %>
+        <div class="author spacing-b-1">
           <%= image_tag @issue.user.gravatar_url, class: 'author__avatar' %>
+          <div>
+            <strong><%= @issue.user.email %></strong>
+          </div>
         </div>
       <% end %>
     </div>
