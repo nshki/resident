@@ -25,19 +25,3 @@
     }
   }
 }
-
-.card__author {
-  font-size: 0.875rem;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
-.card__avatar {
-  background-color: color(dark-grey);
-  width: 46px;
-  height: 46px;
-  display: block;
-  margin-right: 0.6rem;
-  border-radius: 999px;
-}

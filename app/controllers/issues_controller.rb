@@ -22,6 +22,11 @@ class IssuesController < ApplicationController
     end
   end
 
+  def show
+    @issue = current_user.community.issues.find_by(id: params[:id])
+    redirect_to issues_path if @issue.blank?
+  end
+
   private
 
   def issue_params

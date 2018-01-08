@@ -1,0 +1,56 @@
+<div class="wrapper">
+  <div class="flex spacing-v-2">
+    <h2><%= current_user.community.name %></h2>
+    <%= link_to 'Back to All Issues', issues_path %>
+  </div>
+
+  <div class="flex -align-start spacing-v-2">
+    <div class="thread">
+      <div class="thread__post">
+        <h2 class="spacing-t-0"><%= @issue.title %></h2>
+        <p><%= @issue.description %></p>
+        
+        <div class="author">
+          <%= image_tag @issue.user.gravatar_url, class: 'author__avatar' %>
+          <div>
+            <strong><%= @issue.user.email %></strong><br />
+            Posted <%= @issue.created_at %>
+          </div>
+        </div>
+      </div>
+
+      <% 2.times do %>
+        <div class="thread__post">
+          <div class="thread__post__message">
+            Example comment on this issue thread. A new model and tests need to
+            be written for comments.
+          </div>
+
+          <div class="author spacing-t-1">
+            <%= image_tag @issue.user.gravatar_url, class: 'author__avatar' %>
+            <div>
+              <strong><%= @issue.user.email %></strong><br />
+              Posted <%= @issue.created_at %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+
+      <div class="thread__reply">
+        <input placeholder="Type reply here..." class="thread__reply__input" type="text" />
+        <button class="thread__reply__button">Post</button>
+      </div>
+    </div>
+
+    <div class="flex-remainder spacing-1">
+      <div class="spacing-b-1">
+        <button class="button -positive">Me Too!</button>
+      </div>
+      <% 9.times do %>
+        <div class="author -inline">
+          <%= image_tag @issue.user.gravatar_url, class: 'author__avatar' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

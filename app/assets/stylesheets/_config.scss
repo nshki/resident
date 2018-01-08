@@ -6,9 +6,11 @@
 
 $colors: (
   dark-grey: #2b2b2b,
+  grey: #828282,
   light-grey: #f5f5f5,
   raspberry: #eb5757,
   watermelon: #27ae60,
+  blueberry: #2d9cdb,
 );
 
 @function color($key) {

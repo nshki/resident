@@ -35,12 +35,6 @@
           <use xlink:href="#path7_stroke_2x" transform="translate(166 45)" fill="#DDDDDD"/>
         </g>
       </g>
-      <g id="Vector">
-        <use xlink:href="#path8_stroke" transform="translate(-421.5 117)" fill="#DDDDDD"/>
-      </g>
-      <g id="Vector">
-        <use xlink:href="#path9_stroke" transform="translate(30.8595 108)" fill="#DDDDDD"/>
-      </g>
       <g id="Ellipse">
         <mask id="mask4_outline_ins">
           <use xlink:href="#path10_fill" fill="white" transform="translate(-635 -456)"/>
