@@ -19,27 +19,27 @@
         </div>
       </div>
 
-      <% 2.times do %>
+      <% @issue.comments.each do |comment| %>
         <div class="thread__post">
-          <div class="thread__post__message">
-            Example comment on this issue thread. A new model and tests need to
-            be written for comments.
-          </div>
+          <div class="thread__post__message"><%= comment.message %></div>
 
           <div class="author spacing-t-1">
-            <%= image_tag @issue.user.gravatar_url, class: 'author__avatar' %>
+            <%= image_tag comment.user.gravatar_url, class: 'author__avatar' %>
             <div>
-              <strong><%= @issue.user.email %></strong><br />
-              Posted <%= @issue.created_at %>
+              <strong><%= comment.user.email %></strong><br />
+              Posted <%= comment.created_at %>
             </div>
           </div>
         </div>
       <% end %>
 
-      <div class="thread__reply">
-        <input placeholder="Type reply here..." class="thread__reply__input" type="text" />
-        <button class="thread__reply__button">Post</button>
-      </div>
+      <%= form_for Comment.new do |f| %>
+        <div class="thread__reply">
+          <%= f.hidden_field :issue_id, value: @issue.id %>
+          <%= f.text_field :message, placeholder: 'Type comment here.', class: 'thread__reply__input' %>
+          <%= f.submit 'Post', class: 'thread__reply__button' %>
+        </div>
+      <% end %> 
     </div>
 
     <div class="flex-remainder spacing-1">
