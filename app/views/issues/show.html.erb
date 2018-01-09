@@ -53,11 +53,11 @@
           <%= link_to 'Not me too :)', favorite_path(@favorite), class: 'button -full-width', method: :delete %>
         <% end %>
       </div>
-      <% 4.times do %>
+      <% @issue.favorites.each do |favorite| %>
         <div class="author spacing-b-1">
-          <%= image_tag @issue.user.gravatar_url, class: 'author__avatar' %>
+          <%= image_tag favorite.user.gravatar_url, class: 'author__avatar' %>
           <div>
-            <strong><%= @issue.user.email %></strong>
+            <strong><%= favorite.user.email %></strong>
           </div>
         </div>
       <% end %>
