@@ -24,4 +24,16 @@
       width: 48%;
     }
   }
+
+  .author {
+    margin-top: 1rem;
+  }
+}
+
+.card__meta {
+  flex: 1;
+  text-align: right;
+  font-size: 0.875rem;
+  color: rgba(#000, 0.7);
+  margin: 1rem 0 0 1rem;
 }
