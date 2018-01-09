@@ -44,7 +44,14 @@
 
     <div class="flex-remainder spacing-1">
       <div class="spacing-b-1">
-        <button class="button -full-width -positive">Me Too!</button>
+        <% if @favorite.new_record? %>
+          <%= form_for @favorite do |f| %>
+            <%= f.hidden_field :issue_id, value: @issue.id %>
+            <%= f.submit 'Me too :(', class: 'button -full-width -positive' %>
+          <% end %>
+        <% else %>
+          <%= link_to 'Not me too :)', favorite_path(@favorite), class: 'button -full-width', method: :delete %>
+        <% end %>
       </div>
       <% 4.times do %>
         <div class="author spacing-b-1">

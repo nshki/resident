@@ -25,6 +25,8 @@ class IssuesController < ApplicationController
   def show
     @issue = current_user.community.issues.find_by(id: params[:id])
     redirect_to issues_path if @issue.blank?
+    @favorite = Favorite.find_by(user: current_user, issue: @issue)
+    @favorite = Favorite.new if @favorite.blank?
   end
 
   private

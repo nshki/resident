@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   post '/invite/create', to: 'invites#create_account', as: :create_account
 
   resources :issues
+  resources :favorites, only: [:create, :destroy]
 end
