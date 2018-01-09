@@ -1,5 +1,10 @@
 <div id="clearance">
   <h2>Join Resident!</h2>
+  <p>
+    Once you create an account, you can customize your avatar at
+    <%= link_to 'Gravatar', 'http://en.gravatar.com/', target: '_blank' %>.
+    We will display user avatars based on your email addresses.
+  </p>
 
   <%= form_for(@user, url: create_account_path) do |f| %>
     <%= f.hidden_field :code, value: @code %>
