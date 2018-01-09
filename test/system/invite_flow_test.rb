@@ -6,6 +6,7 @@ class InviteFlowsTest < ApplicationSystemTestCase
     community = create(:community)
     code = invite.code
     visit("/invite/#{code}")
+    fill_in('Name', with: 'Chuck Testa')
     fill_in('Email', with: 'chuck@testa.com')
     fill_in('Password', with: 'Alskdjfhg1!')
     click_button('Create Account')

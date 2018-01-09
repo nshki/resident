@@ -6,7 +6,7 @@ class User < ApplicationRecord
   has_many :comments, dependent: :destroy
   belongs_to :community
 
-  validates :code, presence: true
+  validates :code, :name, presence: true
 
   def gravatar_url
     "//www.gravatar.com/avatar/#{Digest::MD5::hexdigest(self.email.downcase)}"

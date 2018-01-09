@@ -13,7 +13,7 @@
         <div class="author">
           <%= image_tag @issue.user.gravatar_url, class: 'author__avatar' %>
           <div>
-            <strong><%= @issue.user.email %></strong><br />
+            <strong><%= @issue.user.name %></strong><br />
             Posted <%= time_ago_in_words(@issue.created_at) %> ago
           </div>
         </div>
@@ -26,7 +26,7 @@
           <div class="author spacing-t-1">
             <%= image_tag comment.user.gravatar_url, class: 'author__avatar' %>
             <div>
-              <strong><%= comment.user.email %></strong><br />
+              <strong><%= comment.user.name %></strong><br />
               Posted <%= time_ago_in_words(comment.created_at) %> ago
             </div>
           </div>
@@ -36,7 +36,7 @@
       <%= form_for Comment.new do |f| %>
         <div class="thread__reply">
           <%= f.hidden_field :issue_id, value: @issue.id %>
-          <%= f.text_field :message, placeholder: 'Type comment here.', class: 'thread__reply__input' %>
+          <%= f.text_field :message, required: true, placeholder: 'Type comment here.', class: 'thread__reply__input' %>
           <%= f.submit 'Post', class: 'thread__reply__button' %>
         </div>
       <% end %> 
@@ -57,7 +57,7 @@
         <div class="author spacing-b-1">
           <%= image_tag favorite.user.gravatar_url, class: 'author__avatar' %>
           <div>
-            <strong><%= favorite.user.email %></strong>
+            <strong><%= favorite.user.name %></strong>
           </div>
         </div>
       <% end %>

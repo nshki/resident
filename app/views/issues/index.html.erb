@@ -13,7 +13,7 @@
             <div class="author">
               <%= image_tag issue.user.gravatar_url, class: 'author__avatar' %>
               <div>
-                <strong><%= issue.user.email %></strong><br />
+                <strong><%= issue.user.name %></strong><br />
                 Posted <%= time_ago_in_words(issue.created_at) %> ago
               </div>
             </div>

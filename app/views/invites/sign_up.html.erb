@@ -3,6 +3,11 @@
 
   <%= form_for(@user, url: create_account_path) do |f| %>
     <%= f.hidden_field :code, value: @code %>
+
+    <div class="text-field">
+      <%= f.label :name %>
+      <%= f.text_field :name, required: true %>
+    </div>
     
     <div class="email-field">
       <%= f.label :email %>
