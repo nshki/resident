@@ -2,7 +2,7 @@ class IssuesController < ApplicationController
   before_action :require_login
 
   def index
-    @issues = current_user.community.issues
+    @issues = current_user.community.issues.order(created_at: :desc)
   end
 
   def new
