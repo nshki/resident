@@ -20,15 +20,4 @@ Rails.application.configure do
     logger.formatter = config.log_formatter
     config.logger    = ActiveSupport::TaggedLogging.new(logger)
   end
-
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.perform_deliveries = true
-  config.action_mailer.smtp_settings = {
-    user_name: ENV['MAILGUN_SMTP_LOGIN'],
-    password: ENV['MAILGUN_SMTP_PASSWORD'],
-    domain: ENV['DOMAIN'],
-    address: ENV['MAILGUN_SMTP_SERVER'],
-    port: ENV['MAILGUN_SMTP_PORT'],
-    authentication: :plain,
-  }
 end
