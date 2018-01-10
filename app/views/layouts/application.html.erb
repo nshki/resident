@@ -15,7 +15,12 @@
       <div class="wrapper">
         <div class="navbar__flex">
           <div>
-            <h1 class="navbar__logo"><%= link_to 'Resident', root_path %></h1>
+            <h1 class="navbar__logo">
+              <%= link_to root_path do %>
+                <%= image_tag 'icon.svg' %>
+                Resident
+              <% end %>
+            </h1>
           </div>
           <div>
             <% if signed_in? %>

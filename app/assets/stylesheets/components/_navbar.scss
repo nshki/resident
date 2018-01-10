@@ -23,6 +23,14 @@ $navbar-height: 50px;
   a, a:hover {
     text-decoration: none;
     color: #fff;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  img {
+    max-height: $navbar-height - 30px;
+    margin-right: 0.5rem;
   }
 }
 
