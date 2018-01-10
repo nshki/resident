@@ -20,4 +20,16 @@ Rails.application.configure do
     logger.formatter = config.log_formatter
     config.logger    = ActiveSupport::TaggedLogging.new(logger)
   end
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.smtp_settings = {
+    user_name: ENV.fetch('SENDGRID_USERNAME'),
+    password: ENV.fetch('SENDGRID_PASSWORD'),
+    domain: ENV.fetch('DOMAIN'),
+    address: 'smtp.sendgrid.net',
+    port: 587,
+    authentication: :plain,
+    enable_starttls_auto: true
+  }
 end
